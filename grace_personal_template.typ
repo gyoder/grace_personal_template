@@ -157,6 +157,7 @@
   set text(font: "Times New Roman", size: 12pt)
   show ref: it => strong(it)
   let date = datetime(year: ymd.at(0), month: ymd.at(1), day: ymd.at(2))
+  set grid(column-gutter: 15pt)
   set page(
     margin: (
       top: 1.7in,
