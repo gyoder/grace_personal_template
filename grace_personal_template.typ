@@ -63,14 +63,16 @@
   set text(font: "Montserrat", size: 11pt)
   set par(justify: true, leading: 0.75em)
   show math.equation: set text(font: "Fira Math", fallback: false)
+
   set raw(theme: rose-pine-moon.codeThemePath)
   show raw: it => [
     #set text(fill: rose-pine-moon.text)
-
-    #box(
+    #block(
       fill: rose-pine-moon.overlay,
-      outset: 4pt,
+      inset: 8pt,
       radius: 5pt,
+      breakable: true,
+
       it
     )
   ]
@@ -133,3 +135,207 @@
 
   doc
 }
+
+
+#import "@preview/zero:0.6.0": num, set-num, format-table, ztable, zi, nonum
+
+#let page_num_function(cur: num, last: num) = {
+  [Page #cur of #last]
+}
+
+#let ecet227_report(
+  title: str,
+  week: num,
+  course: "ECET 227",
+  prof: "Professor Weissbach",
+  author: "Grace Yoder",
+  ymd: (num, num, num),
+  section: "Monday 11:30",
+  doc
+) = {
+  set heading(numbering: "1.1 ")
+  set text(font: "Times New Roman", size: 12pt)
+  show ref: it => strong(it)
+  let date = datetime(year: ymd.at(0), month: ymd.at(1), day: ymd.at(2))
+  set page(
+    margin: (
+      top: 1.7in,
+      bottom: 1in,
+      left: 1in,
+      right: 1in,
+    ),
+    paper: "us-letter",
+    header: {
+      set text(size: 10pt)
+      v(5pt)
+      set par(spacing: .8em)
+      align(right)[
+        #author
+
+        #course
+
+        #prof
+
+        #week: #title
+
+        #section
+
+        #date.display("[month repr:long] [day], [year]")
+      ]
+      v(-15pt)
+    },
+    footer: context {
+      align(center)[Page #counter(page).display() of #counter(page).final().first()]
+    },
+  )
+
+  // set-num(
+  //   exponent: "eng"
+  // )
+
+  doc
+}
+
+// For usage in ztables
+#let t = (
+  // Volt
+  Tv: nonum[TV],
+  Gv: nonum[GV],
+  Mv: nonum[MV],
+  kv: nonum[kV],
+  v: nonum[V],
+  mv: nonum[mV],
+  uv: nonum[#sym.mu\V],
+  nv: nonum[nV],
+  pv: nonum[pV],
+
+  // Farad
+  Tf: nonum[TF],
+  Gf: nonum[GF],
+  Mf: nonum[MF],
+  kf: nonum[kF],
+  f: nonum[F],
+  mf: nonum[mF],
+  uf: nonum[#sym.mu\F],
+  nf: nonum[nF],
+  pf: nonum[pF],
+
+
+  // Ohm
+  To: nonum[T#sym.Omega],
+  Go: nonum[G#sym.Omega],
+  Mo: nonum[M#sym.Omega],
+  ko: nonum[k#sym.Omega],
+  o: nonum[#sym.Omega],
+  mo: nonum[m#sym.Omega],
+  uo: nonum[#sym.mu#sym.Omega],
+  no: nonum[n#sym.Omega],
+  po: nonum[p#sym.Omega],
+
+  // Henry
+  Th: nonum[TH],
+  Gh: nonum[GH],
+  Mh: nonum[MH],
+  kh: nonum[kH],
+  h: nonum[H],
+  mh: nonum[mH],
+  uh: nonum[#sym.mu\H],
+  nh: nonum[nH],
+  ph: nonum[pH],
+
+  // Amp
+  Ta: nonum[TA],
+  Ga: nonum[GA],
+  Ma: nonum[MA],
+  ka: nonum[kA],
+  a: nonum[A],
+  ma: nonum[mA],
+  ua: nonum[#sym.mu\A],
+  na: nonum[nA],
+  pa: nonum[pA],
+
+  // Hertz
+  Thz: nonum[THz],
+  Ghz: nonum[GHz],
+  Mhz: nonum[MHz],
+  khz: nonum[kHz],
+  hz: nonum[Hz],
+  mhz: nonum[mHz],
+  uhz: nonum[#sym.mu\Hz],
+  nhz: nonum[nHz],
+  phz: nonum[pHz],
+)
+
+// For usage everywhere but ztables
+#let u = (
+  // Volt
+  Tv: [TV],
+  Gv: [GV],
+  Mv: [MV],
+  kv: [kV],
+  v: [V],
+  mv: [mV],
+  uv: [#sym.mu\V],
+  nv: [nV],
+  pv: [pV],
+
+  // Farad
+  Tf: [TF],
+  Gf: [GF],
+  Mf: [MF],
+  kf: [kF],
+  f: [F],
+  mf: [mF],
+  uf: [#sym.mu\F],
+  nf: [nF],
+  pf: [pF],
+
+
+  // Ohm
+  To: [T#sym.Omega],
+  Go: [G#sym.Omega],
+  Mo: [M#sym.Omega],
+  ko: [k#sym.Omega],
+  o: [#sym.Omega],
+  mo: [m#sym.Omega],
+  uo: [#sym.mu#sym.Omega],
+  no: [n#sym.Omega],
+  po: [p#sym.Omega],
+
+  // Henry
+  Th: [TH],
+  Gh: [GH],
+  Mh: [MH],
+  kh: [kH],
+  h: [H],
+  mh: [mH],
+  uh: [#sym.mu\H],
+  nh: [nH],
+  ph: [pH],
+
+  // Amp
+  Ta: [TA],
+  Ga: [GA],
+  Ma: [MA],
+  ka: [kA],
+  a: [A],
+  ma: [mA],
+  ua: [#sym.mu\A],
+  na: [nA],
+  pa: [pA],
+
+  // Hertz
+  Thz: [THz],
+  Ghz: [GHz],
+  Mhz: [MHz],
+  khz: [kHz],
+  hz: [Hz],
+  mhz: [mHz],
+  uhz: [#sym.mu\Hz],
+  nhz: [nHz],
+  phz: [pHz],
+)
+
+#let blackcell = table.cell(
+  fill: black,
+)[]
