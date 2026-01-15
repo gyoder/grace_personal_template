@@ -210,6 +210,50 @@
   nv: nonum[nV],
   pv: nonum[pV],
 
+  // Volt rms
+  Tvrms: nonum[TV#sub[rms]],
+  Gvrms: nonum[GV#sub[rms]],
+  Mvrms: nonum[MV#sub[rms]],
+  kvrms: nonum[kV#sub[rms]],
+  vrms: nonum[V#sub[rms]],
+  mvrms: nonum[mV#sub[rms]],
+  uvrms: nonum[#sym.mu\V#sub[rms]],
+  nvrms: nonum[nV#sub[rms]],
+  pvrms: nonum[pV#sub[rms]],
+
+  // Volt peak
+  Tvp: nonum[TV#sub[p]],
+  Gvp: nonum[GV#sub[p]],
+  Mvp: nonum[MV#sub[p]],
+  kvp: nonum[kV#sub[p]],
+  vp: nonum[V#sub[p]],
+  mvp: nonum[mV#sub[p]],
+  uvp: nonum[#sym.mu\V#sub[p]],
+  nvp: nonum[nV#sub[p]],
+  pvp: nonum[pV#sub[p]],
+
+  // Volt p to p
+  Tvpp: nonum[TV#sub[pp]],
+  Gvpp: nonum[GV#sub[pp]],
+  Mvpp: nonum[MV#sub[pp]],
+  kvpp: nonum[kV#sub[pp]],
+  vpp: nonum[V#sub[pp]],
+  mvpp: nonum[mV#sub[pp]],
+  uvpp: nonum[#sym.mu\V#sub[pp]],
+  nvpp: nonum[nV#sub[pp]],
+  pvpp: nonum[pV#sub[pp]],
+
+  // Volt dc
+  Tvdc: nonum[TV#sub[dc]],
+  Gvdc: nonum[GV#sub[dc]],
+  Mvdc: nonum[MV#sub[dc]],
+  kvdc: nonum[kV#sub[dc]],
+  vdc: nonum[V#sub[dc]],
+  mvdc: nonum[mV#sub[dc]],
+  uvdc: nonum[#sym.mu\V#sub[dc]],
+  nvdc: nonum[nV#sub[dc]],
+  pvdc: nonum[pV#sub[dc]],
+
   // Farad
   Tf: nonum[TF],
   Gf: nonum[GF],
@@ -279,6 +323,50 @@
   uv: [#sym.mu\V],
   nv: [nV],
   pv: [pV],
+
+  // Volt rms
+  Tvrms: [TV#sub[rms]],
+  Gvrms: [GV#sub[rms]],
+  Mvrms: [MV#sub[rms]],
+  kvrms: [kV#sub[rms]],
+  vrms: [V#sub[rms]],
+  mvrms: [mV#sub[rms]],
+  uvrms: [#sym.mu\V#sub[rms]],
+  nvrms: [nV#sub[rms]],
+  pvrms: [pV#sub[rms]],
+
+  // Volt peak
+  Tvp: [TV#sub[p]],
+  Gvp: [GV#sub[p]],
+  Mvp: [MV#sub[p]],
+  kvp: [kV#sub[p]],
+  vp: [V#sub[p]],
+  mvp: [mV#sub[p]],
+  uvp: [#sym.mu\V#sub[p]],
+  nvp: [nV#sub[p]],
+  pvp: [pV#sub[p]],
+
+  // Volt p to p
+  Tvpp: [TV#sub[pp]],
+  Gvpp: [GV#sub[pp]],
+  Mvpp: [MV#sub[pp]],
+  kvpp: [kV#sub[pp]],
+  vpp: [V#sub[pp]],
+  mvpp: [mV#sub[pp]],
+  uvpp: [#sym.mu\V#sub[pp]],
+  nvpp: [nV#sub[pp]],
+  pvpp: [pV#sub[pp]],
+
+  // Volt dc
+  Tvdc: [TV#sub[dc]],
+  Gvdc: [GV#sub[dc]],
+  Mvdc: [MV#sub[dc]],
+  kvdc: [kV#sub[dc]],
+  vdc: [V#sub[dc]],
+  mvdc: [mV#sub[dc]],
+  uvdc: [#sym.mu\V#sub[dc]],
+  nvdc: [nV#sub[dc]],
+  pvdc: [pV#sub[dc]],
 
   // Farad
   Tf: [TF],
