@@ -155,7 +155,12 @@
 ) = {
   set heading(numbering: "1.1 ")
   set text(font: "Times New Roman", size: 12pt)
+  set image(width: 80%)
   show ref: it => strong(it)
+  show figure.caption: it => context [
+    *#it.supplement~#it.counter.display()#it.separator*#it.body
+  ]
+  show figure.where(kind: table): set figure.caption(position: top)
   let date = datetime(year: ymd.at(0), month: ymd.at(1), day: ymd.at(2))
   set grid(column-gutter: 15pt)
   set page(
